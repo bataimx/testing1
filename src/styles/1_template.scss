@@ -1,0 +1,111 @@
+//custom template: 1_template
+.thumbnail{
+  font-weight: $font-bold;
+  position: relative;
+  max-height: 150px;
+  min-height: 90px;
+  overflow: hidden;
+  figure{
+    margin: 0;
+    &:after{
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: $black;
+      opacity: 0.2;
+      z-index: 0;
+    }
+  }
+  figcaption{
+    padding: 10px;
+    background: $red;
+    color: $white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+  }
+  time{
+    @include border-radius(50%);
+    display: block;
+    text-align: center;
+    padding: 10px;
+    overflow: hidden;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1;
+    background: $red;
+    color: $white;
+  }
+}
+.section{
+  $tools-gap: 15px;
+
+  float: left;
+  width: 100%;
+  &--border{
+    border: 5px solid transparent;
+    margin: -5px;
+    @include border-radius(3px);
+    @include box-sizing(content-box);
+    @include transition(border 0.3s ease-out);
+    &:hover{
+      border-color: $border-color;
+    }
+  }
+  &__wrapper{
+    @include box-shadow(0 5px 50px -10px #bbb);
+    background-color: $white;
+    float: left;
+  }
+  &__content{
+    float: left;
+    width: 100%;
+  }
+  &__subtitle{
+    font-size: 1.3em;
+    color: $red;
+    font-weight: $font-light;
+  }
+  &__toolbar{
+    margin-left: -$tools-gap;
+    float: left;
+
+    > *{
+      display: inline-block;
+      vertical-align: middle;
+      padding-left: $tools-gap;
+    }
+    i{
+      margin-right: 5px;
+    }
+  }
+  h2 a{
+    color: inherit;
+  }
+  p{
+    line-height: 2;
+    margin-bottom: 30px;
+  }
+}
+.listing{
+  @include flex-box();
+  margin-right: -$listing-gap;
+  margin-left: -$listing-gap;
+
+  &__columns{
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: $listing-gap;
+    padding-left: $listing-gap;
+    padding-bottom: $listing-gap*2;
+  }
+}

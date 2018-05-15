@@ -1,0 +1,18 @@
+$white        : #fff;
+$black        : #000;
+$red          : #d45a4f;
+$body-bg      : #f9f9f9;
+$text-color   : #777;
+$border-color : #d2d2d2;
+$gray-darker  : lighten(#000, 13.5%); // #222
+$gray-dark    : lighten(#000, 20%);   // #333
+$gray         : lighten(#000, 33.5%); // #555
+$gray-light   : lighten(#000, 60%);   // #999
+$gray-lighter : lighten(#000, 93.5%); // #eee
+
+$font-base    : 14px;
+$font-family  : 'Lato', sans-serif;
+$font-bold    : 700;
+$font-light   : 200;
+
+$listing-gap  : 30px;

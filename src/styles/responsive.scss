@@ -1,0 +1,34 @@
+//responsive
+//mobiles
+@media (min-width: 768px){
+  .container {
+    max-width: 750px;
+  }
+  .listing{
+    &__columns{
+      @include flex-columns(1);
+    }
+  }
+}
+//tablet
+@media (min-width: 992px){
+  .container {
+    max-width: 970px;
+  }
+  .listing{
+    &__columns{
+      @include flex-columns(2);
+    }
+  }
+}
+//desktop
+@media (min-width: 1200px){
+  .container{
+    max-width: 1140px;
+  }
+  .listing{
+    &__columns{
+      @include flex-columns(3);
+    }
+  }
+}

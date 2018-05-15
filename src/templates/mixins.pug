@@ -1,0 +1,26 @@
+mixin article(items)
+  .listing
+    each item in items
+      .listing__columns
+        section.section.section--border
+          .section__wrapper
+            .thumbnail.section__content
+              figure
+                img(src=item.thumb).img-responsive
+                figcaption.text-upper Photos
+              time(datetime=item.date_val)!=item.date
+            .section__content.px-30.py-30
+              .content
+                h2.mt-0
+                  a(href="#")!=item.title
+                .section__subtitle.mb-30!=item.title_sub
+                p!=item.desc
+              .section__toolbar
+                .timestamp
+                  a(href="#")
+                    i.fa.fa-clock
+                    span!=item.timestamp
+                .comments
+                  a(href="#")
+                    i.fa.fa-comments
+                    span!=item.comments

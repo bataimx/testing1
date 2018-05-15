@@ -1,0 +1,48 @@
+// ======================
+// Tags
+// ======================
+$tag_plate_icon_color: #444
+$deep_gray: #444
+.tag__plate
+  .plate__icon
+    display: inline-block
+    width: 2.5em
+    height: 2.5em
+    margin-right: .5em
+    border: 1px solid $tag_plate_icon_color
+    border-radius: 50%
+    padding: 1px
+    vertical-align: middle
+    overflow: hidden
+    .icon__inner
+      display: table
+      width: 100%
+      text-align: center
+      .icon__image
+        display: table-cell
+        width: 1.5em
+        height: 2.5em
+        vertical-align: middle
+        color: $tag_plate_icon_color
+        &:after
+          content: ''
+          font-size: 1.5em
+          font-family: 'stayjapan-icon'!important
+
+// ==========================
+// Section Article
+// ==========================
+div.section__article
+  .section__element
+    padding: 32px 0
+    .section__element__headline
+      margin: 0
+      #top-header
+        margin: 0 0 10px
+        color: $deep_gray
+        font-size: 1.6rem
+        font-weight: bold
+        border: none
+      .section__element__headline__content
+        font-size: 1.4rem
+        padding: 16px

@@ -50,6 +50,23 @@ module.exports = function(grunt) {
           livereload: true
         }
       }
+    },
+    copy: {
+      main: {
+        files: [{
+            expand: true,
+            cwd: '<%= source %>assets/',
+            src: ['**'],
+            dest: '<%= dest %>assets/'
+        }],
+      },
+    },
+    clean: ['<%= dest %>'],
+    'gh-pages': {
+      options: {
+        base: '<%= dest %>'
+      },
+      src: ['**']
     }
   });
 
@@ -57,6 +74,13 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-gh-pages');
 
-  grunt.registerTask('default', ['pug', 'sass', 'connect', 'watch']);
+  grunt.registerTask('build', ['clean', 'pug', 'sass', 'copy']);
+  grunt.registerTask('startServe', ['connect', 'watch']);
+  grunt.registerTask('deploy', ['build', 'gh-pages']);
+
+  grunt.registerTask('default', ['build', 'startServe']);
 };
