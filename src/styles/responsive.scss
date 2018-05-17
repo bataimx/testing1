@@ -4,11 +4,6 @@
   .container {
     max-width: 750px;
   }
-  .listing{
-    &__columns{
-      @include flex-columns(1);
-    }
-  }
 }
 //tablet
 @media (min-width: 992px){
